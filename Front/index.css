@@ -1,0 +1,219 @@
+/* Rectangle 1 */
+
+:root {
+    --text-primary-color: #FFFFFF;
+    --icon-background-color: #D9D9D9;
+    --icon-active-color: #000000;
+    --icon-inactive-color: #FFFFFF;
+    --background-color: #202124;
+    --progress-bar-active-color: #5B5B5B;
+    --text-secondary-color: #9C9C9C;
+
+    --margin-top: 40px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--background-color);
+
+    font-family: 'lato'
+}
+
+main {
+
+    width: 360px;
+    height: 740px;
+
+    background: var(--background-color);
+}
+
+.album-info {
+
+    width: 260px;
+    height: 363px;
+
+    margin: auto;
+    margin-top: var(--margin-top);
+
+    text-align: center;
+}
+
+
+
+.album-img {
+    width: 260px;
+    height: 268px;
+
+    background: url(./assets/altas_emote.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 10px;
+}
+
+/* Song tittle */
+.song-title {
+    margin: auto;
+    margin-top: var(--margin-top);
+
+    color: var(--text-primary-color);
+
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+/* Album title */
+.album-title {
+
+    color: var(--text-secondary-color);
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+.media-control {
+
+    height: 35px;
+    width: 259px;
+
+    margin: auto;
+    margin-top: var(--margin-top);
+
+    border-radius: 0px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.play-button {
+    height: 35px;
+    width: 35px;
+
+    padding-left: 2px;
+
+    border-radius: 100%;
+
+    background-color: var(--icon-background-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ux-icon-inactive {
+    color: var(--icon-inactive-color);
+}
+
+.ux-icon-active {
+    color: var(--icon-active-color);
+}
+
+
+.status {
+    height: 35px;
+    width: 259px;
+
+    margin: auto;
+    margin-top: var(--margin-top);
+
+    border-radius: 0px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time {
+
+    width: 20px;
+    height: 12px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: var(--text-primary-color);
+}
+
+.progress-bar {
+    width: 200px;
+    height: 5px;
+
+    margin-top: 2px;
+    border-radius: 1px;
+    background: #D9D9D9;
+}
+
+.current-progress-bar {
+    background: #5B5B5B;
+    width: 10%;
+    height: 100%;
+    border-radius: 1px;
+}
+
+.volume {
+    width: 139px;
+    height: 16px;
+
+    margin: auto;
+    margin-top: var(--margin-top);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.volume-bar {
+    width: 80px;
+    height: 5px;
+
+    margin-top: 2px;
+    border-radius: 1px;
+
+    background: var(--text-primary-color);
+}
+
+.current-volume-bar {
+
+    width: 25%;
+    height: 100%;
+    border-radius: 1px;
+    background: var(--progress-bar-active-color);
+
+}
+
+.current-volume-circle {
+    width: 16px;
+    height: 16px;
+
+    display: relative;
+    translate: 100% -70%;
+
+    border-radius: 100%;
+
+    background: #5B5B5B;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
