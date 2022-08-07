@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +15,12 @@
     <title>Music-player</title>
 
 </head>
+
 <body>
-    
+
+
     <main>
+
         <div class="album-info">
             <div class="album-img"></div>
             <h1 class="song-title">Título de la canción</h1>
@@ -26,7 +30,7 @@
             <i class="bi bi-shuffle ux-icon-inactive"></i>
             <i class="bi bi-skip-start ux-icon-inactive"></i>
             <div class="play-button">
-                <i class="bi bi-play ux-icon-active" ></i>
+                <i class="bi bi-play ux-icon-active"></i>
             </div>
             <i class="bi bi-skip-end ux-icon-inactive"></i>
             <i class="bi bi-repeat ux-icon-inactive"></i>
@@ -41,15 +45,29 @@
         </div>
 
         <div class="volume">
-            <i class="bi bi-volume-down ux-icon-inactive"></i>
-            <div class="volume-bar">
-                
-                <div class="current-volume-bar"></div>
-                <div class="current-volume-circle"></div>
+            <i class="bi bi-plus-circle ux-icon-inactive"></i>
+            <div class="volume-container">
+                <i class="bi bi-volume-down ux-icon-inactive"></i>
+                <div class="volume-bar">
+
+                    <div class="current-volume-bar"></div>
+                    <div class="current-volume-circle"></div>
+                </div>
+                <i class="bi bi-volume-up ux-icon-inactive"></i>
             </div>
-            <i class="bi bi-volume-up ux-icon-inactive"></i>
+            <i class="bi bi-soundwave ux-icon-inactive"></i>
         </div>
+
+        <audio></audio>
+
+        <input type="file" accept="audio/mp3,audio/*;capture=microphone"multiple hidden>
+        
     </main>
 
+    <script src="./controller/main.js"></script>
+    <script src="./controller/playList.js"></script>
+    <script src="./controller/mediaButtons.js"></script>
+    <script src="./controller/openDocument.js"></script>
 </body>
+
 </html>

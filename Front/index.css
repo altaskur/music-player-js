@@ -6,6 +6,7 @@
     --icon-active-color: #000000;
     --icon-inactive-color: #FFFFFF;
     --background-color: #202124;
+    --background-color-secondary: #5B5B5B;
     --progress-bar-active-color: #5B5B5B;
     --text-secondary-color: #9C9C9C;
 
@@ -20,6 +21,8 @@ body {
 
     font-family: 'lato'
 }
+
+
 
 main {
 
@@ -172,12 +175,24 @@ main {
     border-radius: 1px;
 }
 
-.volume {
+.volume{
+    height: 16px;
+    width: 220px;
+
+    margin: auto;
+    margin-top: var(--margin-top);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.volume-container {
     width: 139px;
     height: 16px;
 
     margin: auto;
-    margin-top: var(--margin-top);
 
     display: flex;
     justify-content: space-between;
