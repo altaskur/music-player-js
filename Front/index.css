@@ -27,7 +27,7 @@ body {
 main {
 
     width: 360px;
-    height: 740px;
+    height: 700px;
 
     background: var(--background-color);
 }
@@ -170,7 +170,7 @@ main {
 
 .current-progress-bar {
     background: #5B5B5B;
-    width: 10%;
+    width: 0%;
     height: 100%;
     border-radius: 1px;
 }
