@@ -32,8 +32,8 @@ en el caso de dar error devolverá un false como respuesta.
 
 
 # Botón play
-Al hacer click en el botón de play, se tiene que comprobar que hallan canciones en la lista de reproducción con la función `checkPlaylist();`
-en el caso de verdadera pasaremos a comprobar si hay cargada en la propiedad src de la etiqueta audio con al función `checkAudioSrc();` si no hay ninguna canción cargada, ejecutaremos la función `playSong();`
+comprobaremos si hay alguna canción cargada en el array playList[] con la función `checkPlaylist();` si hay canciones cargadas, ejecutaremos la función `playSong();`
+
 si no hay ninguna canción en la lista de reproducción lanzaremos la función `addSongsToPlaylist();`
 
 
