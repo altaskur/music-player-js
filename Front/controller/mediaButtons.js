@@ -36,13 +36,12 @@ audio.addEventListener("timeupdate", function (event) {
 
     // percentage of the media that has been downloaded
     var percent = (event.target.currentTime / event.target.duration) * 100;
-    console.log("Percent", percent);
+
     currentProgressBar.style.width = percent + "%";
 
     if (percent == 100) {
         // next song
         nextSong();
-
     }
 
     // pass current time in minutes
@@ -55,9 +54,9 @@ audio.addEventListener("timeupdate", function (event) {
     minutes = Math.floor(event.target.duration / 60);
     seconds = Math.floor(event.target.duration - minutes * 60);
     format = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+    
     if (format != "NaN:NaN") {
         durationTime.textContent = format;
     }
-
 
 });

@@ -71,12 +71,12 @@ function nextSong() {
     } else if (current < 0) {
         current = currentPlaylist.length - 1;
     }
+
     console.log(currentPlaylist)
     console.log(currentPlaylist[current]);
     audio.src = currentPlaylist[current];
 
     audio.play();
-
 }
 
 function previousSong() {
