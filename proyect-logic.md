@@ -44,10 +44,21 @@ Al ejecutarse lanzará la propiedad click del input tipo file del DOM `input.cli
 ## Evento de escucha en el input type file
 Para detectar cuando se han subido los archivos al DOM usaremos la propiedad `addEventListener("change", ...`, una vez dentro este evento capturara en la variable files la propiedad del input 'file' obteniendo los archivos que se han subido, que nos devuelve un objeto FileList, con las propiedades name, lastModified, size y type por cada elemento.
 
-ahora ejecutaremos la función createBlob(files); pasándole la variable files, esta función nos devolverá un listado con las urls de los archivos, que añadiremos al array playlist = [];
+ahora ejecutaremos la función createBlob(files); pasandole la variable files, esta función nos devolverá un listado con las urls de los archivos, que añadiremos al array playlist = [];
 
 
 ## createBlob(files);
 comprobara el tamaño de files si es mayor que 0, recorrerá cada uno de los elementos, usando el metido URL.createObjetcURL(file) y añadiendo el resultado a un array que devolverá. creando una url válida de los elementos del DOM pasados, para poder trabajar con ellos desde la etiqueta audio.
 
 ## playSong();
+al ejecutar esta función deberá comprobar si hay una canción en la propiedad de `audio.src` con la función `checkAudioSrc();`
+
+si devuelve false cargamos en el audio src la primera canción del array `currentPlaylist[0]`
+
+ahora comprobaremos si la canción cargada esta en pausa con la función isPaused();
+
+si está parada cambiaremos el icono de play a pause y usaremos la propiedad `audio.play();`
+sino cambiaremos el icono de pause a play y usaremos la propiedad `audio.pause`
+
+## isPaused();
+Comprobamos audio.paused devuelve true si esta parada.
