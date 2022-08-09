@@ -2,23 +2,12 @@ import { checkPlayList } from "../playList/playList.js";
 import { changeUIInfo } from "../details/details.js";
 import { getPlayList, getCurrentPlaylist, getCurrentSong, setCurrentSong } from "../../index.js";
 
-function resume() {
+function pauseSong(){
     let audio = document.querySelector("audio");
     let playIcon = document.querySelector(".play-button").querySelector("i");
-
-    if (isPaused()) {
-        playIcon.classList.remove("bi-play");
-        playIcon.classList.add("bi-pause");
-        changeUIInfo(getPlayList()[0]);
-
-        audio.src = createBlob( getCurrentPlaylist()[getCurrentSong()] );
-        audio.play();
-
-    } else {
-        playIcon.classList.remove("bi-pause");
-        playIcon.classList.add("bi-play");
-        audio.pause();
-    }
+    playIcon.classList.remove("bi-pause");
+    playIcon.classList.add("bi-play");
+    audio.pause();
 }
 
 function createBlob(file) {
@@ -26,8 +15,10 @@ function createBlob(file) {
 }
 
 function checkAudioSrc() {
+
     let audio = document.querySelector("audio");
-    if (audio.src == "") {
+    console.log(audio.src)
+    if (audio.src) {
         return false;
     } else {
         return true;
@@ -98,4 +89,4 @@ playButton.addEventListener("click", () => {
 
 });
 
-export { playSong };
+export { playSong, pauseSong, };

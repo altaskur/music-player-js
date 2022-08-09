@@ -6,4 +6,9 @@ function checkPlayList( playList ){
     }
 }
 
-export { checkPlayList };
+function clearSrc(){
+    let audio = document.querySelector("audio");
+    audio.src = "";
+}
+
+export { checkPlayList, clearSrc };
