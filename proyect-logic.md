@@ -57,7 +57,7 @@ si devuelve false, comprobamos la variable `currenSong` y cargamos en el audio s
 
 ahora comprobaremos si la canción cargada esta en pausa con la función ``isPaused()``;
 
-si está parada cambiaremos el icono de play a pause, llamaremos a la función ``changeUIInfo(info == false)`` y usaremos la propiedad `audio.play();`
+si está parada cambiaremos el icono de play a pause, llamaremos a la función ``changeUIInfo(info == false)`` y usaremos la propiedad `audio.play();` con la información de createBlob(files);
 
 sino cambiaremos el icono de pause a play y usaremos la propiedad `audio.pause`
 

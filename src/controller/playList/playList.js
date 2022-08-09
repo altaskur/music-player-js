@@ -1,4 +1,3 @@
-
 function checkPlayList( playList ){
     if( playList.length > 0 ){
         return true;
@@ -6,6 +5,5 @@ function checkPlayList( playList ){
         return false;
     }
 }
-
 
 export { checkPlayList };

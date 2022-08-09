@@ -12,13 +12,11 @@ function changeAudioVolume(volume = 50) {
     audioBar.value = volume * 100;
 }
 
-
 // Control buttons
 let addSongBtn = document.querySelector(".bi-plus-circle");
 
 addSongBtn.addEventListener("click", () => {
     addSongsToPlaylist();
-
 });
 
 // PlayList
@@ -60,8 +58,5 @@ let volumeBar = document.querySelector(".volume-bar");
 volumeBar.addEventListener("change", () => {
     changeAudioVolume(volumeBar.value);
 });
-
-
-
 
 export { changeAudioVolume, };
