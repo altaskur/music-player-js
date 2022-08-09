@@ -57,7 +57,8 @@ si devuelve false, comprobamos la variable `currenSong` y cargamos en el audio s
 
 ahora comprobaremos si la canción cargada esta en pausa con la función ``isPaused()``;
 
-si está parada cambiaremos el icono de play a pause y usaremos la propiedad `audio.play();`
+si está parada cambiaremos el icono de play a pause, llamaremos a la función ``changeUIInfo(info == false)`` y usaremos la propiedad `audio.play();`
+
 sino cambiaremos el icono de pause a play y usaremos la propiedad `audio.pause`
 
 ## isPaused()
@@ -98,3 +99,8 @@ Al hacer clic llamará a la función ``addSongsToPlaylist()``
 # Botón playList
 
 Lanzará un modal, mostrando el contenido del array ``currentPlaylist``
+
+# Botón mute
+
+Al pulsar sobre el botón mute comprobaremos si esta muted con la función ``isMuted()`` en caso de ser cierta
+establecemos ``audio.muted= true``y habilitaremos el slider o ser falsa ``audio.muted = false`` y deshabilitar el slider.
