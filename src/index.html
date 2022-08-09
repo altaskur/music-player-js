@@ -9,8 +9,10 @@
 
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="./assets/bootstrap-icons-1.9.1/bootstrap-icons-1.9.1/bootstrap-icons.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./index.css">
+
 
     <title>Music-player</title>
 
@@ -27,13 +29,13 @@
             <h2 class="album-title">Album</h2>
         </div>
         <div class="media-control">
-            <i class="bi bi-shuffle ux-icon-inactive"></i>
-            <i class="bi bi-skip-start ux-icon-inactive"></i>
+            <i class="bi bi-shuffle ui-white"></i>
+            <i class="bi bi-skip-start ui-white"></i>
             <div class="play-button">
-                <i class="bi bi-play ux-icon-active"></i>
+                <i class="bi bi-play"></i>
             </div>
-            <i class="bi bi-skip-end ux-icon-inactive"></i>
-            <i class="bi bi-repeat ux-icon-inactive"></i>
+            <i class="bi bi-skip-end ui-white"></i>
+            <i class="bi bi-repeat ui-white"></i>
         </div>
         <div class="status">
             <span class="time">0:00</span>
@@ -45,17 +47,18 @@
         </div>
 
         <div class="volume">
-            <i class="bi bi-plus-circle ux-icon-inactive"></i>
+            <i class="bi bi-plus-circle ui-white"></i>
             <div class="volume-container">
-                <i class="bi bi-volume-down ux-icon-inactive"></i>
-                <div class="volume-bar">
+                <i class="bi bi-volume-down ui-white"></i>
+                <!-- <div class="volume-bar">
 
                     <div class="current-volume-bar"></div>
                     <div class="current-volume-circle"></div>
-                </div>
-                <i class="bi bi-volume-up ux-icon-inactive"></i>
+                </div> -->
+                <input type="range" name="" class="volume-bar" min="0" max="100">
+                <i class="bi bi-volume-up ui-white"></i>
             </div>
-            <i class="bi bi-soundwave ux-icon-inactive"></i>
+            <i class="bi bi-soundwave ui-white"></i>
         </div>
 
         <audio></audio>
@@ -64,10 +67,8 @@
 
     </main>
 
-    <script src="./controller/main.js"></script>
-    <script src="./controller/playList.js"></script>
-    <script src="./controller/mediaButtons.js"></script>
-    <script src="./controller/openDocument.js"></script>
+    <script type="module" src="./index.js"></script>
+
 </body>
 
 </html>

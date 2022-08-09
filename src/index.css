@@ -49,7 +49,7 @@ main {
     width: 260px;
     height: 268px;
 
-    background: url(./assets/altas_emote.png);
+    background: url(./assets/album-default.png);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -117,15 +117,6 @@ main {
 
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-.ux-icon-inactive {
-    color: var(--icon-inactive-color);
-}
-
-.ux-icon-active {
-    color: var(--icon-active-color);
-}
-
 
 .status {
     height: 35px;
@@ -231,4 +222,9 @@ main {
     background: #5B5B5B;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.ui-white {
+    color: var(--text-primary-color);
 }
