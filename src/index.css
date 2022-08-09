@@ -224,7 +224,10 @@ main {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-
 .ui-white {
     color: var(--text-primary-color);
+}
+
+.ux-hidden {
+    display: none;
 }

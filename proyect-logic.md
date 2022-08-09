@@ -67,7 +67,7 @@ Comprobamos audio.paused devuelve true si esta parada.
 
 # Botón siguiente
 
-Al pulsar el botón siguiente canción, se debe consultar la variable `currentSong` le sumamos uno y ejecutamos la función playSong()
+Al pulsar el botón siguiente canción, se debe consultar la variable `currentSong` le sumamos uno y ejecutamos la función playSong().
 
 # Botón anterior
 
@@ -92,15 +92,30 @@ de forma predeterminada está en 2.
 
 comprobamos la variable repeat si esta 0 la ponemos en 1 y cambiamos el icono de repetir una, si esta en 1 la pasamos a dos y ponemos el icono de no repetir y si esta en 2 la ponemos en 0 y ponemos el icono de repetir.
 
-# Botón añadir canciones
+# Botones de control
 
-Al hacer clic llamará a la función ``addSongsToPlaylist()``
+## Botón añadir canciones
 
-# Botón playList
+Al hacer clic llamará a la función ``addSongsToPlaylist()``.
 
-Lanzará un modal, mostrando el contenido del array ``currentPlaylist``
+## Botón playList
 
-# Botón mute
+Lanzará un modal, mostrando el contenido del array ``currentPlaylist``.
+para ello le pasaremos los datos a la función showModal();
+
+## Botón volume Min
 
 Al pulsar sobre el botón mute comprobaremos si esta muted con la función ``isMuted()`` en caso de ser cierta
 establecemos ``audio.muted= true``y habilitaremos el slider o ser falsa ``audio.muted = false`` y deshabilitar el slider.
+
+## Botón volume Max
+
+Al pulsar sobre el botón el volumen de la etiqueta audio se pondrá al 100 usando la función ``changeAudioVolume()``.
+
+## Barra volumen
+
+Al cambiar su posición deberá capturar su valor y pasarlo a la función ``changeAudioVolume()``.
+
+## changeAudioVolume(volume = 50)
+
+al ejecutarse deberá dividirse el valor entre 100 ya que audio.volume solo acepta valores de 0.0 a 1.0 y a su vez cambiar la barra de audio de posición.

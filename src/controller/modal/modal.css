@@ -1,0 +1,40 @@
+#modal {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 700px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.378);
+    text-align: center;
+}
+
+#modal button {
+
+    border: 2px solid #5B5B5B;
+    border-bottom: 4px solid #5B5B5B;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#modal div {
+    width: 90%;
+    height: 87%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: rgba(43, 43, 43, 0.906);
+    color: #fff;
+}
+
+#modal ol{
+    overflow-y: auto;
+    height: 100%;
+}
+
+#modal li {
+    margin: 40px;
+
+}

@@ -13,6 +13,7 @@ function changeUIInfo(info = false) {
         albumImg.background = "url('../../assets/album-default.png')";
         albumName.textContent = "Ninguna canción seleccionada";
         songTitle.textContent = "";
+        console.log("No song is playing");
     }   
 }
 
