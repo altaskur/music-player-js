@@ -18,8 +18,6 @@ fileInput.addEventListener("change", () => {
 
     setPlayList(fileArray);
     setCurrentPlaylist(fileArray);
-    
-    console.log(getPlayList());
 
     changeUIInfo(getPlayList()[0]);
 

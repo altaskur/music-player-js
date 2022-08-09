@@ -2,6 +2,25 @@ import { checkPlayList } from "../playList/playList.js";
 import { changeUIInfo } from "../details/details.js";
 import { getPlayList, getCurrentPlaylist, getCurrentSong, setCurrentSong } from "../../index.js";
 
+function resume() {
+    let audio = document.querySelector("audio");
+    let playIcon = document.querySelector(".play-button").querySelector("i");
+
+    if (isPaused()) {
+        playIcon.classList.remove("bi-play");
+        playIcon.classList.add("bi-pause");
+        changeUIInfo(getPlayList()[0]);
+
+        audio.src = createBlob( getCurrentPlaylist()[getCurrentSong()] );
+        audio.play();
+
+    } else {
+        playIcon.classList.remove("bi-pause");
+        playIcon.classList.add("bi-play");
+        audio.pause();
+    }
+}
+
 function createBlob(file) {
     return URL.createObjectURL(file);
 }
@@ -25,34 +44,43 @@ function isPaused() {
 }
 
 function playSong(){
+
     let audio = document.querySelector("audio");
+    let playIcon = document.querySelector(".play-button").querySelector("i");
+
     if (checkAudioSrc()) {
+
+    
         if (isPaused()) {
             playIcon.classList.remove("bi-play");
             playIcon.classList.add("bi-pause");
-            changeUIInfo(getPlayList()[0]);
-
-            audio.src = createBlob( getCurrentPlaylist()[getCurrentSong()]);
+    
             audio.play();
-
+    
         } else {
             playIcon.classList.remove("bi-pause");
             playIcon.classList.add("bi-play");
             audio.pause();
         }
+
     } else {
-        setCurrentSong(0);
-        let playIcon = document.querySelector(".play-button").querySelector("i");
+    
         if (isPaused()) {
             playIcon.classList.remove("bi-play");
             playIcon.classList.add("bi-pause");
             changeUIInfo(getPlayList()[0]);
-
-            audio.src = createBlob( getCurrentPlaylist()[getCurrentSong()]);
+    
+            audio.src = createBlob( getCurrentPlaylist()[getCurrentSong()] );
             audio.play();
+    
+        } else {
+            playIcon.classList.remove("bi-pause");
+            playIcon.classList.add("bi-play");
+            audio.pause();
+        }
 
-        } 
     }
+
     console.log(checkAudioSrc());
 }
 
@@ -65,8 +93,6 @@ playButton.addEventListener("click", () => {
     if(checkPlayList(getPlayList()))
     {
         playSong();
-
-    } else {
 
     }
 
