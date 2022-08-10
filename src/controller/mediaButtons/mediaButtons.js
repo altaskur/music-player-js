@@ -1,6 +1,6 @@
 import { checkPlayList } from "../playList/playList.js";
 import { changeUIInfo } from "../details/details.js";
-import { getPlayList, getCurrentPlaylist, getCurrentSong, setCurrentSong } from "../../index.js";
+import { getPlayList, getCurrentPlaylist, getCurrentSong, setCurrentSong, getPause, setPause } from "../../index.js";
 
 function nextSong() {
     let currentSong = getCurrentSong();
@@ -42,6 +42,7 @@ function pauseSong() {
     let playIcon = document.querySelector(".play-button").querySelector("i");
     playIcon.classList.remove("bi-pause");
     playIcon.classList.add("bi-play");
+    setPause(true);
     audio.pause();
 }
 
@@ -52,7 +53,8 @@ function createBlob(file) {
 
 function isPaused() {
     let audio = document.querySelector("audio");
-    if (audio.paused) {
+    console.log("isPaused: " + audio.paused + " " + getPause());
+    if (audio.paused || getPause()) {
         return true;
     } else {
         return false;
@@ -68,14 +70,18 @@ function playSong() {
 
     console.log("is paused: " + isPaused());
 
-    console.log("Playing song: ", getCurrentPlaylist()[getCurrentSong()]);
+    if (isPaused()) {
+        console.log("Playing song: ", getCurrentPlaylist()[getCurrentSong()]);
 
-    playIcon.classList.remove("bi-play");
-    playIcon.classList.add("bi-pause");
-    changeUIInfo(getPlayList()[0]);
+        playIcon.classList.remove("bi-play");
+        playIcon.classList.add("bi-pause");
+        changeUIInfo(getPlayList()[0]);
 
-    audio.src = createBlob(getCurrentPlaylist()[getCurrentSong()]);
-    audio.play();
+        audio.src = createBlob(getCurrentPlaylist()[getCurrentSong()]);
+        audio.play();
+    } else {
+        pauseSong();
+    }
 
 }
 
@@ -86,9 +92,13 @@ let playIcon = document.querySelector(".bi-play");
 playButton.addEventListener("click", () => {
 
     if (checkPlayList(getPlayList())) {
+        if (getPause()) {
+            setPause(false);
+        }
         playSong();
-
     }
+
+
 
 });
 

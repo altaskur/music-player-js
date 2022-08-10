@@ -12,10 +12,18 @@ var shufflePlaylist = [];
 var repeat = false;
 var shuffle = false;
 var currenSong = 0;
+var pause = true;
 
 changeUIInfo(checkPlayList(playList));
 changeAudioVolume();
 
+function setPause (boolean){
+    pause = boolean;
+}
+
+function getPause (){
+    return pause;
+}
 
 function setPlayList(element) {
     playList = element;
@@ -47,6 +55,8 @@ export {
     getCurrentPlaylist, 
     setCurrentPlaylist,
     getCurrentSong,
-    setCurrentSong
+    setCurrentSong,
+    setPause,
+    getPause,
 };
 
