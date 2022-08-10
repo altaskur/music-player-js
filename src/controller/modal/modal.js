@@ -1,4 +1,5 @@
-import { getPlayList } from "../../index.js";
+import { getCurrentPlaylist, setCurrentSong,getCurrentSong, setPause } from "../../index.js";
+import { playSong } from "../mediaButtons/mediaButtons.js";
 
 function showModal() {
     let modalDiv = document.querySelector("#modal");
@@ -9,24 +10,50 @@ function hideModal() {
     let modalDiv = document.querySelector("#modal");
     modalDiv.classList.add("ux-hidden");
 }
+
+function playlistLiStyleReset(){
+    let allLi = document.querySelectorAll("li");
+ 
+    for (let i = 0; i < allLi.length; i++) {
+        allLi[i].classList.remove("ux-modal-active");
+        if (i == getCurrentSong()) {
+            allLi[i].classList.add("ux-modal-active");
+        }
+    }
+}
+
 function contentModal(){
     let modalContent = document.querySelector(".modal-content");
     modalContent.innerHTML = "";
 
     let ol = document.createElement("ol");
-    if (getPlayList().length > 0) {
-        for (let song in getPlayList()) {
-            console.log(getPlayList()[song]);
+    let ul = document.createElement("ul");
+    if (getCurrentPlaylist().length > 0) {
+        for (let song in getCurrentPlaylist()) {
+
             let li = document.createElement("li");
-            li.textContent = getPlayList()[song].name;
+            li.textContent = getCurrentPlaylist()[song].name;
+            li.addEventListener("click", () => {
+                setCurrentSong(song);
+                setPause(true);
+                playSong();
+            });
+            if(song == getCurrentSong()){
+                li.classList.add("ux-modal-active");
+            } else {
+                li.classList.remove("ux-modal-active");
+            }
             ol.appendChild(li);
         }
+        modalContent.appendChild(ol);
     } else {
         let li = document.createElement("li");
         li.textContent = "No hay canciones en la lista";
-        ol.appendChild(li);
+        ul.appendChild(li);
+        modalContent.appendChild(ul);
     }
-    modalContent.appendChild(ol);
+
+
 }
 
 function showCurrentPlaylist() { 
@@ -48,4 +75,4 @@ buttonModalClose.addEventListener("click", () => {
     hideModal();
 });
 
-export { showCurrentPlaylist, showModal, hideModal };
+export { showCurrentPlaylist, showModal, hideModal, playlistLiStyleReset };

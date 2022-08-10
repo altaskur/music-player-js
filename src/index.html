@@ -32,20 +32,20 @@
             <h2 class="album-title">Album</h2>
         </div>
         <div class="media-control">
-            <i class="bi bi-shuffle ui-white"></i>
+            <i class="bi bi-shuffle ux-inactive"></i>
             <i class="bi bi-skip-start ui-white"></i>
             <div class="play-button">
                 <i class="bi bi-play"></i>
             </div>
             <i class="bi bi-skip-end ui-white"></i>
-            <i class="bi bi-repeat ui-white"></i>
+            <i class="bi bi-repeat ux-active"></i>
         </div>
         <div class="status">
-            <span class="time">0:00</span>
-            <div class="progress-bar">
-                <div class="current-progress-bar"></div>
-            </div>
-            <span class="time">0:00</span>
+            <span class="time current-progress-time">0:00</span>
+
+            <input class="current-progress-bar" type="range" step="0.0001" min="0" max="1">
+
+            <span class="time total-progress-time">0:00</span>
 
         </div>
 

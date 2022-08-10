@@ -12,6 +12,12 @@ function changeAudioVolume(volume = 50) {
     audioBar.value = volume * 100;
 }
 
+function loadToSrc(file) {
+    console.log("Loading file to src: " + file);
+    let audio = document.querySelector("audio");
+    audio.src = URL.createObjectURL(file);
+}
+
 // Control buttons
 let addSongBtn = document.querySelector(".bi-plus-circle");
 
@@ -59,4 +65,4 @@ volumeBar.addEventListener("change", () => {
     changeAudioVolume(volumeBar.value);
 });
 
-export { changeAudioVolume, };
+export { changeAudioVolume, loadToSrc };
