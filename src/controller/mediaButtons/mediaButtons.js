@@ -37,8 +37,6 @@ function previousSong() {
     }
 }
 
-
-
 function pauseSong() {
     let audio = document.querySelector("audio");
     let playIcon = document.querySelector(".play-button").querySelector("i");
@@ -51,16 +49,6 @@ function createBlob(file) {
     return URL.createObjectURL(file);
 }
 
-function checkAudioSrc() {
-
-    let audio = document.querySelector("audio");
-    //console.log(audio.src)
-    if (audio.src) {
-        return false;
-    } else {
-        return true;
-    }
-}
 
 function isPaused() {
     let audio = document.querySelector("audio");
@@ -75,39 +63,20 @@ function playSong() {
     console.log("playSong");
     let audio = document.querySelector("audio");
     let playIcon = document.querySelector(".play-button").querySelector("i");
-    console.log("are song in src: " + checkAudioSrc());
-    if (checkAudioSrc()) {
 
-        console.log("is paused: " + isPaused());
-        if (isPaused()) {
-            playIcon.classList.remove("bi-play");
-            playIcon.classList.add("bi-pause");
-            audio.play();
+    console.log("Loading song to src");
 
-        } else {
-            playIcon.classList.remove("bi-pause");
-            playIcon.classList.add("bi-play");
-            audio.pause();
-        }
+    console.log("is paused: " + isPaused());
 
-    } else {
-        console.log("Loading song to src");
+    console.log("Playing song: ", getCurrentPlaylist()[getCurrentSong()]);
 
-        console.log("is paused: " + isPaused());
+    playIcon.classList.remove("bi-play");
+    playIcon.classList.add("bi-pause");
+    changeUIInfo(getPlayList()[0]);
 
-        console.log("Playing song: ", getCurrentPlaylist()[getCurrentSong()]);
+    audio.src = createBlob(getCurrentPlaylist()[getCurrentSong()]);
+    audio.play();
 
-        playIcon.classList.remove("bi-play");
-        playIcon.classList.add("bi-pause");
-        changeUIInfo(getPlayList()[0]);
-
-        audio.src = createBlob(getCurrentPlaylist()[getCurrentSong()]);
-        audio.play();
-
-
-    }
-
-    console.log(checkAudioSrc());
 }
 
 
