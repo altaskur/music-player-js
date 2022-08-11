@@ -110,7 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
   var head = document.querySelector("head");
   var link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "./controller/ui/modal.css";
+  link.href = "./controllers/ui-controller.css";
   head.appendChild(link);
 });
 
