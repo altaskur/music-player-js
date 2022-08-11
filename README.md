@@ -13,4 +13,4 @@ Puedes consultar las demás ramas de [master](https://github.com/altaskur/music-
 ## Descripción
 
 El proyecto se basa en el control de la etiqueta de audio de HTML5 mediante JavaScript,
-mediante un input[Type=file] se cargan las canciónes en el navegador, y estas pasan a la propiedad src de la etiqueta audio de HTML5, convirtiendo el objeto File en un blob, creando un enlace compatible para esta y así acceder a las canciones.
+mediante un input[Type=file] se cargan las canciones en el navegador, y estas pasan a la propiedad src de la etiqueta audio de HTML5, convirtiendo el objeto File en un blob, creando un enlace compatible para esta y así acceder a las canciones.
