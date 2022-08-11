@@ -4,7 +4,7 @@
     --text-primary-color: #FFFFFF;
     --icon-background-color: #D9D9D9;
     --icon-active-color: #000000;
-    --icon-inactive-color: #FFFFFF;
+    --icon-inactive-color: #5B5B5B;
     --background-color: #202124;
     --background-color-secondary: #5B5B5B;
     --progress-bar-active-color: #5B5B5B;
@@ -14,6 +14,7 @@
 }
 
 body {
+    width: 360px;
     margin: 0;
     padding: 0;
 
@@ -33,7 +34,7 @@ main {
 }
 
 .album-info {
-
+    
     width: 260px;
     height: 363px;
 
@@ -49,7 +50,7 @@ main {
     width: 260px;
     height: 268px;
 
-    background: url(./assets/altas_emote.png);
+    background: url(./assets/album-default.png);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -118,15 +119,6 @@ main {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.ux-icon-inactive {
-    color: var(--icon-inactive-color);
-}
-
-.ux-icon-active {
-    color: var(--icon-active-color);
-}
-
-
 .status {
     height: 35px;
     width: 259px;
@@ -165,12 +157,10 @@ main {
 
     margin-top: 2px;
     border-radius: 1px;
-    background: #D9D9D9;
+  
 }
 
 .current-progress-bar {
-    background: #5B5B5B;
-    width: 0%;
     height: 100%;
     border-radius: 1px;
 }
@@ -231,4 +221,19 @@ main {
     background: #5B5B5B;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ui-white {
+    color: var(--text-primary-color);
+}
+.ux-active {
+    color: var(--text-primary-color);
+}
+
+.ux-inactive {
+    color: var(--icon-inactive-color);
+}
+
+.ux-hidden {
+    display: none;
 }
