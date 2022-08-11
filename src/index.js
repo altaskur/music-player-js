@@ -1,9 +1,6 @@
-import { checkPlayList } from "./controller/playList/playList.js";
-import { changeUIInfo } from "./controller/details/details.js";
-import { changeAudioVolume } from "./controller/controlButtons/controlButtons.js";
-import { } from "./controller/modal/modal.js";
-import { } from "./controller/mediaButtons/mediaButtons.js";
-
+import { checkPlayList } from "./controllers/playList-controller.js";
+import { changeUIInfo } from "./controllers/ui-controller.js";
+import { changeAudioVolume } from "./controllers/buttons-controller.js";
 
 var playList = [];
 var currentPlaylist = [];
@@ -22,95 +19,94 @@ changeUIInfo(checkPlayList(playList));
 changeAudioVolume();
 
 function setPlayOnLoad(boolean) {
-    playOnLoad = boolean;
+  playOnLoad = boolean;
 }
 
 function getPlayOnLoad() {
-    return playOnLoad;
+  return playOnLoad;
 }
 
 function setRepeatOne(element) {
-    repeatOne = element;
+  repeatOne = element;
 }
 
 function getRepeatOne() {
-    return repeatOne;
+  return repeatOne;
 }
 
-function getSuffle() {
-    return shuffle;
+function getShuffle() {
+  return shuffle;
 }
 
-function setSuffle(element) {
-    shuffle = element;
+function setShuffle(element) {
+  shuffle = element;
 }
 
-function setPause (boolean){
-    pause = boolean;
+function setPause(boolean) {
+  pause = boolean;
 }
 
-function getPause (){
-    return pause;
+function getPause() {
+  return pause;
 }
 
 function setPlayList(element) {
-    playList = element;
+  playList = element;
 }
 
 function getPlayList() {
-    return playList;
+  return playList;
 }
 
 function getCurrentPlaylist() {
-    return currentPlaylist;
+  return currentPlaylist;
 }
 
 function setCurrentPlaylist(element) {
-    currentPlaylist = element;
+  currentPlaylist = element;
 }
 
 function getCurrentSong() {
-    return currenSong;
+  return currenSong;
 }
 
 function setCurrentSong(element) {
-    currenSong = element;
+  currenSong = element;
 }
 
-function setSufflePlaylist(element) {
-    shufflePlaylist = element;
+function setShufflePlaylist(element) {
+  shufflePlaylist = element;
 }
 
-function getSufflePlaylist() {
-    return shufflePlaylist;
+function getShufflePlaylist() {
+  return shufflePlaylist;
 }
 
 function setRepeat(element) {
-    repeat = element;
+  repeat = element;
 }
 
 function getRepeat() {
-    return repeat;
+  return repeat;
 }
 
 export {
-    setPlayList, 
-    getPlayList, 
-    getCurrentPlaylist, 
-    setCurrentPlaylist,
-    getCurrentSong,
-    setCurrentSong,
-    setPause,
-    getPause,
-    setSufflePlaylist,
-    getSufflePlaylist,
-    setRepeat,
-    getRepeat,
-    getSuffle,
-    setSuffle,
-    setRepeatOne,
-    getRepeatOne,
-    setPlayOnLoad,
-    getPlayOnLoad
+  setPlayList,
+  getPlayList,
+  getCurrentPlaylist,
+  setCurrentPlaylist,
+  getCurrentSong,
+  setCurrentSong,
+  setPause,
+  getPause,
+  setShufflePlaylist,
+  getShufflePlaylist,
+  setRepeat,
+  getRepeat,
+  getShuffle,
+  setShuffle,
+  setRepeatOne,
+  getRepeatOne,
+  setPlayOnLoad,
+  getPlayOnLoad,
 };
-
