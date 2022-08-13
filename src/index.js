@@ -11,12 +11,21 @@ var repeatOne = false;
 
 var shuffle = false;
 var currenSong = 0;
+var lastSong = 0;
 var pause = true;
 
 var playOnLoad = false;
 
 changeUIInfo(checkPlayList(playList));
 changeAudioVolume();
+
+function setLastSong(element) {
+  lastSong = element;
+}
+
+function getLastSong() {
+  return lastSong;
+}
 
 function setPlayOnLoad(boolean) {
   playOnLoad = boolean;
@@ -109,4 +118,6 @@ export {
   getRepeatOne,
   setPlayOnLoad,
   getPlayOnLoad,
+  setLastSong,
+  getLastSong,
 };

@@ -17,6 +17,8 @@ import {
   getRepeatOne,
   setRepeatOne,
   setPlayOnLoad,
+  getLastSong,
+  setLastSong,
 } from "../index.js";
 
 function changeAudioVolume(volume = 50) {
@@ -82,6 +84,7 @@ function pauseSong() {
 }
 
 function playSong() {
+  console.log("Is paused: ", getPause());
   if (getPause()) {
     console.log(
       "🎶 Playing song: ",
@@ -92,16 +95,25 @@ function playSong() {
     playIcon.classList.remove("bi-play");
     playIcon.classList.add("bi-pause");
 
-    changeUIInfo(getPlayList()[getCurrentSong()]);
+    if (
+      document.querySelector("audio").src.includes("blob") == false ||
+      getCurrentSong() != getLastSong()
+    ) {
+      changeUIInfo(getPlayList()[getCurrentSong()]);
+      playlistLiStyleReset();
+      loadToSrc(getCurrentPlaylist()[getCurrentSong()]);
+      setLastSong(getCurrentSong());
+    }
 
-    playlistLiStyleReset();
+    console.log(getCurrentSong());
 
-    loadToSrc(getCurrentPlaylist()[getCurrentSong()]);
     document.querySelector("audio").play();
 
     setPause(false);
   } else {
     pauseSong();
+    setPause(true);
+    console.log("Song is paused: ", getPause());
   }
 }
 
